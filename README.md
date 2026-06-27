@@ -14,7 +14,7 @@ A modernized, high-performance scraping API for **APJ Abdul Kalam Technological 
 ---
 
 ## ⚡ Features
-- **Modern Tech Stack**: Fully rewritten in TypeScript, powered by `tsup` (esbuild compilation) and `tsx` (fast development run).
+- **Modern Tech Stack**: Built with TypeScript, powered by `tsup` (esbuild compilation) and `tsx` (fast development run).
 - **Resilient Automation**: Uses a headless Puppeteer browser with optimized headers and fingerprinting to bypass KTU's security.
 - **Smart Caching**: Implements Redis-native `v4` client caching for student data (24-hour expiration) to prevent overloading the KTU portal.
 - **Announcement Monitor**: Includes a scheduler using `node-cron` that fetches latest university notifications and triggers alerts via Slack and Firebase Cloud Messaging (FCM).
