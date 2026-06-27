@@ -67,7 +67,7 @@ typings/
 
 # End of https://www.gitignore.io/api/node
 .DS_Store
-config/
+/config/
 
 # Local downloaded student photos
 /proimg/
