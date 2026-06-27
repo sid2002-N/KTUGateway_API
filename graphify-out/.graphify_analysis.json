@@ -1,0 +1,237 @@
+{
+  "communities": {
+    "0": [
+      "controllers_notifications_shownotifications",
+      "core_firebase",
+      "core_firebase_sendnotification",
+      "core_firebase_serviceaccount",
+      "core_slack",
+      "core_slack_sendmessage",
+      "core_slack_web",
+      "jobs_notification",
+      "jobs_notification_fetchnotifications",
+      "tests_notification_test",
+      "utils_notifications",
+      "utils_notifications_cleannotificationforfirebase",
+      "utils_notifications_parsenotifications",
+      "utils_notifications_sendnewnotifications",
+      "utils_redis_getnotifications",
+      "utils_redis_savenotifications",
+      "utils_slugify"
+    ],
+    "1": [
+      "controllers_studentdetails",
+      "controllers_studentdetails_getcsrftoken",
+      "controllers_studentdetails_getdetailsfromwebsite",
+      "controllers_studentdetails_getstudentdetails",
+      "controllers_studentdetails_getstudentresponse",
+      "core_redis",
+      "core_redis_client",
+      "core_redis_getasync",
+      "core_redis_lrangeasync",
+      "utils_parsedata",
+      "utils_parsedata_getimg",
+      "utils_parsedata_parsedata",
+      "utils_redis",
+      "utils_redis_generateuserkey",
+      "utils_redis_getuserredis",
+      "utils_redis_setuserredis"
+    ],
+    "2": [
+      "package",
+      "package_author",
+      "package_description",
+      "package_main",
+      "package_name",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_coverage",
+      "package_scripts_dev",
+      "package_scripts_eslint",
+      "package_scripts_serve",
+      "package_scripts_start",
+      "package_scripts_test",
+      "package_scripts_test_watch",
+      "package_version"
+    ],
+    "3": [
+      "package_dependencies",
+      "package_dependencies_body_parser",
+      "package_dependencies_cheerio",
+      "package_dependencies_cors",
+      "package_dependencies_dayjs",
+      "package_dependencies_dotenv",
+      "package_dependencies_express",
+      "package_dependencies_firebase_admin",
+      "package_dependencies_node_cron",
+      "package_dependencies_redis",
+      "package_dependencies_request",
+      "package_dependencies_request_promise",
+      "package_dependencies_slack_web_api"
+    ],
+    "4": [
+      "package_devdependencies",
+      "package_devdependencies_babel_cli",
+      "package_devdependencies_babel_preset_node8",
+      "package_devdependencies_eslint_config_standard",
+      "package_devdependencies_eslint_plugin_import",
+      "package_devdependencies_eslint_plugin_jest",
+      "package_devdependencies_eslint_plugin_node",
+      "package_devdependencies_eslint_plugin_promise",
+      "package_devdependencies_eslint_plugin_standard",
+      "package_devdependencies_jest",
+      "package_devdependencies_jest_cli",
+      "package_devdependencies_nodemon"
+    ],
+    "5": [
+      "circleci_config_build",
+      "dockercompose_ktu_app",
+      "dockercompose_ktu_mongodb",
+      "dockercompose_ktu_redis",
+      "readme_firebase",
+      "readme_ktu_app_api",
+      "readme_mongodb",
+      "readme_node_js",
+      "readme_redis",
+      "readme_slack"
+    ],
+    "6": [
+      "core_app",
+      "core_app_app",
+      "jobs_index",
+      "jobs_index_startjobs",
+      "middleware_index",
+      "middleware_index_validaterequest",
+      "routes_index",
+      "routes_index_router",
+      "src_index",
+      "src_index_startapp"
+    ],
+    "7": [
+      "eslintrc"
+    ]
+  },
+  "cohesion": {
+    "0": 0.20588235294117646,
+    "1": 0.24166666666666667,
+    "2": 0.13333333333333333,
+    "3": 0.15384615384615385,
+    "4": 0.16666666666666666,
+    "5": 0.2,
+    "6": 0.24444444444444444,
+    "7": 1.0
+  },
+  "gods": [
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 9
+    },
+    {
+      "id": "controllers_studentdetails_getdetailsfromwebsite",
+      "label": "getDetailsFromWebsite()",
+      "degree": 6
+    },
+    {
+      "id": "readme_ktu_app_api",
+      "label": "KTU APP API",
+      "degree": 6
+    },
+    {
+      "id": "utils_redis_getuserredis",
+      "label": "getUserRedis()",
+      "degree": 5
+    },
+    {
+      "id": "utils_redis_savenotifications",
+      "label": "saveNotifications()",
+      "degree": 5
+    },
+    {
+      "id": "utils_redis_getnotifications",
+      "label": "getNotifications()",
+      "degree": 5
+    },
+    {
+      "id": "core_slack_sendmessage",
+      "label": "sendMessage()",
+      "degree": 4
+    },
+    {
+      "id": "jobs_notification_fetchnotifications",
+      "label": "fetchNotifications()",
+      "degree": 4
+    },
+    {
+      "id": "utils_redis_setuserredis",
+      "label": "setUserRedis()",
+      "degree": 4
+    },
+    {
+      "id": "controllers_studentdetails_getstudentdetails",
+      "label": "getStudentDetails()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "CircleCI Build Job",
+      "target": "KTU APP API",
+      "source_files": [
+        ".circleci/config.yml",
+        "README.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `CircleCI Build Job` unexpectedly reaches hub `KTU APP API`"
+    },
+    {
+      "source": "ktu-app service",
+      "target": "KTU APP API",
+      "source_files": [
+        "docker-compose.yml",
+        "README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "implements",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories"
+    },
+    {
+      "source": "showNotifications()",
+      "target": "getNotifications()",
+      "source_files": [
+        "src/controllers/notifications.js",
+        "src/utils/redis.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `showNotifications()` unexpectedly reaches hub `getNotifications()`"
+    },
+    {
+      "source": "getNotifications()",
+      "target": "lrangeAsync",
+      "source_files": [
+        "src/utils/redis.js",
+        "src/core/redis.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "getStudentDetails()",
+      "target": "getUserRedis()",
+      "source_files": [
+        "src/controllers/studentDetails.js",
+        "src/utils/redis.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 965,
+    "output": 1107
+  }
+}
